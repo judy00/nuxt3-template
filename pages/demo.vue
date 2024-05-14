@@ -4,10 +4,20 @@
     <h3>SCSS</h3>
     <div class="scss-text">Test 文字</div>
     <hr>
+    <h3>Pinia</h3>
+    <div>
+      <button @click="counterStore.increment">Increment</button>
+      <div>Count: {{ counterStore.count }}</div>
+      <div>doubleCount: {{ counterStore.doubleCount }}</div>
+    </div>
+    <hr>
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
+import { useCounterStore } from '@/stores/counter'
+
+const counterStore = useCounterStore()
 </script>
 
 <style lang="scss">
