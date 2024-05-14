@@ -12,6 +12,7 @@
 
 <style lang="scss">
 .scss-text {
+  font-family: 'Noto Sans TC';
   border: 1px solid #000;
   @include font(#005CFF, 2, 500, 1.5);
 
