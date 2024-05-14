@@ -20,9 +20,17 @@ export default defineNuxtConfig({
     }
   },
   modules: [
+    '@nuxt/eslint',
     '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
+    '@pinia-plugin-persistedstate/nuxt'
   ],
+  eslint: {
+    config: {
+      stylistic: {
+        'comma-dangle': 'never'
+      }
+    }
+  },
   css: ['~/assets/scss/main.scss'],
   vite: {
     css: {

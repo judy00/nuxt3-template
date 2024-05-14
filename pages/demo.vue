@@ -9,7 +9,7 @@
       <button @click="counterStore.increment">Increment</button>
       <div>Count: {{ counterStore.count }}</div>
       <div>doubleCount: {{ counterStore.doubleCount }}</div>
-      <input type="text" v-model.number="myCount">
+      <input v-model.number="myCount" type="text">
       <button @click="counterStore.setCount(myCount)">Set Count</button>
     </div>
     <hr>
