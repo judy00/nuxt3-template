@@ -20,7 +20,8 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   css: ['~/assets/scss/main.scss'],
   vite: {

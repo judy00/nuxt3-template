@@ -7,11 +7,25 @@ export const useCounterStore = defineStore('counter', () => {
   function increment() {
     count.value++
   }
+  function setCount(value) {
+    count.value = value
+  }
 
   return {
     count,
     name,
     doubleCount,
-    increment
+    increment,
+    setCount
+  }
+}, {
+  persist: {
+    key: 'counter',
+    paths: ['count'],
+    storage: persistedState.cookiesWithOptions({
+      path: '/',
+      secure: true,
+      maxAge: 24 * 60 * 60 * 7
+    })
   }
 })
