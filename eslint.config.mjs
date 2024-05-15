@@ -7,6 +7,7 @@ export default withNuxt({
       singleline: {
         max: 3
       }
-    }]
+    }],
+    '@stylistic/comma-dangle': ['error', 'never']
   }
 })

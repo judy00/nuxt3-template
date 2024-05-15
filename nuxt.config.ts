@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
   hooks: {
     // disbale utils dir auto import
-    'imports:dirs' (dirs) {
+    'imports:dirs'(dirs) {
       const rules = ['utils']
 
       for (const rule of rules) {
@@ -45,9 +45,7 @@ export default defineNuxtConfig({
   },
   eslint: {
     config: {
-      stylistic: {
-        'comma-dangle': 'never'
-      }
+      stylistic: true
     }
   },
   elementPlus: {

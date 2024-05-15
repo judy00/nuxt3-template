@@ -117,14 +117,15 @@ const formatDuration = (seconds) => {
 }
 
 // Element Plus Message Box
-async function showConfirmMsg () {
+async function showConfirmMsg() {
   try {
     await confirmMsg('確認訊息', {
       confirmButtonText: '確定'
     })
 
     console.log('點擊確定')
-  } catch (error) {
+  }
+  catch (error) {
     console.log('點擊取消')
   }
 }
