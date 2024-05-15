@@ -20,11 +20,89 @@
     <div>currentYear: {{ currentYear }}</div>
     <div>format 時長 3725 秒等於: {{ formatDuration(3725) }} </div>
     <hr>
+
+    <h3>Element Plus</h3>
+    <el-button size="small" type="primary">
+      藍色按鈕 小
+    </el-button>
+    <el-button type="primary">
+      藍色按鈕 一般
+    </el-button>
+    <el-button size="large" type="primary">
+      藍色按鈕 大
+    </el-button>
+    <el-button type="primary" disabled>
+      藍色按鈕 禁用
+    </el-button>
+    <hr>
+
+    <el-button size="small" type="info">
+      黑色按鈕 小
+    </el-button>
+    <el-button type="info">
+      黑色按鈕 一般
+    </el-button>
+    <el-button size="large" type="info">
+      黑色按鈕 大
+    </el-button>
+    <el-button type="info" disabled>
+      黑色按鈕 禁用
+    </el-button>
+    <br>
+
+    <el-button size="small" type="primary" plain>
+      藍色線框按鈕 小
+    </el-button>
+    <el-button type="primary" plain>
+      藍色線框按鈕 一般
+    </el-button>
+    <el-button size="large" type="primary" plain>
+      藍色線框按鈕 大
+    </el-button>
+    <el-button type="primary" plain disabled>
+      藍色線框按鈕 禁用
+    </el-button>
+    <br>
+    <el-button size="small" type="info" plain>
+      黑色框按鈕 小
+    </el-button>
+    <el-button type="info" plain>
+      黑色框按鈕 一般
+    </el-button>
+    <el-button size="large" type="info" plain>
+      黑色框按鈕 大
+    </el-button>
+    <el-button type="info" plain disabled>
+      黑色框按鈕 禁用
+    </el-button>
+    <br>
+
+    <el-button text>
+      文字按鈕
+    </el-button>
+    <el-button text class="text-btn__underline">
+      文字底線按鈕
+    </el-button>
+
+    <button @click="successMsg('成功訊息', 0)">
+      successMsg
+    </button>
+    <button @click="errorMsg('錯誤訊息', 0)">
+      errorMsg
+    </button>
+    <button @click="warningMsg('警告訊息', 0)">
+      warningMsg
+    </button>
+    <button @click="showConfirmMsg">
+      showConfirmMsg
+    </button>
+    <hr>
   </div>
 </template>
 
 <script setup>
 import { useCounterStore } from '@/stores/counter'
+import { successMsg, warningMsg, errorMsg, confirmMsg } from '@/utils/message'
 
 // Pinia
 const counterStore = useCounterStore()
@@ -36,6 +114,19 @@ const currentYear = computed(() => dayjs().year())
 const formatDuration = (seconds) => {
   const duration = dayjs.duration(seconds, 'seconds')
   return `${Math.floor(duration.asHours())} 時 ${duration.minutes()} 分`
+}
+
+// Element Plus Message Box
+async function showConfirmMsg () {
+  try {
+    await confirmMsg('確認訊息', {
+      confirmButtonText: '確定'
+    })
+
+    console.log('點擊確定')
+  } catch (error) {
+    console.log('點擊取消')
+  }
 }
 </script>
 

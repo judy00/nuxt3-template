@@ -1,0 +1,206 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #005CFF,
+    ),
+    'info': (
+      'base': #333,
+    ),
+    'success': (
+      'base': #31C462,
+    ),
+    'warning': (
+      'base': #F68128,
+    ),
+    'danger': (
+      'base': #E44048,
+    ),
+    'error': (
+      'base': #E44048,
+    ),
+  ),
+  $text-color: (
+    'regular': #242526,
+  ),
+  $border-radius: (
+    'base': 6px,
+    'small': 6px,
+  ),
+
+  /* el-button */
+  $button: (
+    'font-weight': 400,
+  ),
+  $button-font-size: (
+    'large': 16px,
+    'small': 14px,
+  ),
+  $button-padding-vertical: (
+    'large': 10.5px,
+    'default': 6.5px,
+    'small': 4px,
+  ),
+  $button-padding-horizontal: (
+    'large': 28px,
+    'default': 20px,
+    'small': 12px,
+  ),
+
+  /* el-message-box */
+  $messagebox: (
+    'border-radius': 12px,
+    'content-font-size': 16px,
+    'content-color': #333,
+    'padding-primary': 40px,
+    'font-line-height': 1.7,
+  )
+);
+
+/* === Override === */
+/* el-button */
+.el-button {
+  height: auto;
+  line-height: 1.7;
+  transition: all .3s;
+}
+
+.el-button--primary {
+  &:hover {
+    border-color: #337DFF;
+    background-color: #337DFF;
+  }
+
+  &:active {
+    border-color: #004ACC;
+    background-color: #004ACC;
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover {
+    color: #A6A6A6;
+    border-color: #D9D9D9;
+    background-color: #D9D9D9;
+  }
+}
+
+.el-button--info {
+  &:hover {
+    border-color: #808080;
+    background-color: #808080;
+  }
+
+  &:active {
+    border-color: #1A1A1A;
+    background-color: #1A1A1A;
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover {
+    color: #A6A6A6;
+    border-color: #D9D9D9;
+    background-color: #D9D9D9;
+  }
+}
+
+.el-button--primary.is-plain {
+  border-color: #005CFF;
+  background-color: #FFF;
+
+  &:hover {
+    color: #337DFF;
+    border-color: #337DFF;
+    background-color: #EBF3FF;
+  }
+
+  &:active {
+    color: #004ACC;
+    border-color: #004ACC;
+    background-color: #EBF3FF;
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover {
+    color: #A6A6A6;
+    border-color: #A6A6A6;
+    background-color: #F4F5F6;
+  }
+}
+
+.el-button--info.is-plain {
+  border-color: #1A1A1A;
+  background-color: #FFF;
+
+  &:hover {
+    color: #808080;
+    border-color: #808080;
+    background-color: #F4F5F6;
+  }
+
+  &:active {
+    color: #1A1B1C;
+    border-color: #1A1B1C;
+    background-color: #F4F5F6;
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover {
+    color: #A6A6A6;
+    border-color: #A6A6A6;
+    background-color: #F4F5F6;
+  }
+}
+
+.el-button.is-text {
+  color: #1A1A1A;
+  padding: 0;
+
+  &:not(.is-disabled):hover {
+    color: #808080;
+    background-color: transparent;
+  }
+
+  &:not(.is-disabled):active {
+    color: #000;
+    background-color: transparent;
+  }
+}
+
+.text-btn__underline {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* el-message */
+.el-message {
+  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+}
+
+.el-message .el-message__content {
+  color: #333;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+}
+
+.el-message__icon {
+  font-size: 2rem;
+}
+
+.el-message--success {
+  border: none;
+  background-color: #FFF;
+}
+
+.el-message--warning {
+  border: none;
+  background-color: #FFF;
+}
+
+.el-message--error {
+  border: none;
+  background-color: #FFF;
+}
+
+/* el-message-box */
+.el-message-box__header {
+  padding-bottom: 0;
+}
