@@ -11,6 +11,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@nuxt/image": "^1.7.0",
     "@pinia/nuxt": "^0.5.1",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.11.2",

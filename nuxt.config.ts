@@ -23,12 +23,27 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
+    '@nuxt/image',
     'dayjs-nuxt'
   ],
   eslint: {
     config: {
       stylistic: {
         'comma-dangle': 'never'
+      }
+    }
+  },
+  image: {
+    screens: {
+      md: 767,
+      lg: 991
+    },
+    provider: 'imgix',
+    imgix: {
+      baseURL: 'https://sat-knowledge.imgix.net',
+      modifiers: {
+        fit: 'crop',
+        auto: 'format'
       }
     }
   },
