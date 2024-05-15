@@ -4,6 +4,7 @@
     <h3>SCSS</h3>
     <div class="scss-text">Test 文字</div>
     <hr>
+
     <h3>Pinia</h3>
     <div>
       <button @click="counterStore.increment">Increment</button>
@@ -13,14 +14,29 @@
       <button @click="counterStore.setCount(myCount)">Set Count</button>
     </div>
     <hr>
+
+    <h3>Day.js</h3>
+    <div>{{ $dayjs('2024-02-11').utc().toString() }}</div>
+    <div>currentYear: {{ currentYear }}</div>
+    <div>format 時長 3725 秒等於: {{ formatDuration(3725) }} </div>
+    <hr>
   </div>
 </template>
 
 <script setup>
 import { useCounterStore } from '@/stores/counter'
 
+// Pinia
 const counterStore = useCounterStore()
 const myCount = ref(0)
+
+// Day.js
+const dayjs = useDayjs()
+const currentYear = computed(() => dayjs().year())
+const formatDuration = (seconds) => {
+  const duration = dayjs.duration(seconds, 'seconds')
+  return `${Math.floor(duration.asHours())} 時 ${duration.minutes()} 分`
+}
 </script>
 
 <style lang="scss">

@@ -22,7 +22,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt'
+    '@pinia-plugin-persistedstate/nuxt',
+    'dayjs-nuxt'
   ],
   eslint: {
     config: {
@@ -30,6 +31,11 @@ export default defineNuxtConfig({
         'comma-dangle': 'never'
       }
     }
+  },
+  dayjs: {
+    locales: ['zh-tw'],
+    defaultLocale: 'zh-tw',
+    plugins: ['duration']
   },
   css: ['~/assets/scss/main.scss'],
   vite: {
