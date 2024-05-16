@@ -24,6 +24,7 @@
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.9",
     "@nuxt/eslint": "^0.3.12",
+    "@nuxtjs/i18n": "^8.3.1",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "dayjs-nuxt": "^2.1.9",
     "element-plus": "^2.7.3",

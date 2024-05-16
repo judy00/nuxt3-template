@@ -97,12 +97,35 @@
       showConfirmMsg
     </button>
     <hr>
+
+    <h3>i18n</h3>
+    <p>{{ $t('welcome') }}</p>
+    <form>
+      <select v-model="locale">
+        <option value="zh">zh</option>
+        <option value="en">en</option>
+      </select>
+    </form>
+    <h5>1. locale 改變目前語系，不會存入 cookie</h5>
+    <button @click="locale = 'en'">locale 設成英文</button>
+    <button @click="locale = 'zh'">locale 設成中文</button>
+
+    <h5>2. setLocale 改變目前語系，會存入 cookie</h5>
+    <button @click="setLocale('en')">setLocale 設成英文</button>
+    <button @click="setLocale('zh')">setLocale 設成中文</button>
+
+    <h5>3. setLocaleCookie 不改變目前語系，改變 cookie</h5>
+    <button @click="setLocaleCookie('en')">setLocaleCookie 設成英文</button>
+    <button @click="setLocaleCookie('zh')">setLocaleCookie 設成中文</button>
+    <hr>
   </div>
 </template>
 
 <script setup>
 import { useCounterStore } from '@/stores/counter'
 import { successMsg, warningMsg, errorMsg, confirmMsg } from '@/utils/message'
+
+const { locale, setLocale, setLocaleCookie } = useI18n()
 
 // Pinia
 const counterStore = useCounterStore()

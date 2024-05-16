@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
     '@element-plus/nuxt',
     '@nuxt/eslint',
+    '@nuxtjs/i18n',
     '@nuxt/image',
     'dayjs-nuxt'
   ],
@@ -50,6 +51,14 @@ export default defineNuxtConfig({
   },
   elementPlus: {
     importStyle: 'scss'
+  },
+  i18n: {
+    langDir: 'locales',
+    defaultLocale: 'zh',
+    locales: [
+      { code: 'zh', iso: 'zh-TW', file: 'zh.json' },
+      { code: 'en', iso: 'en-US', file: 'en.json' }
+    ]
   },
   image: {
     screens: {
