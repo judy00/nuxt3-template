@@ -37,7 +37,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxtjs/i18n',
     '@nuxt/image',
-    'dayjs-nuxt'
+    'dayjs-nuxt',
+    './modules/sat-icons/module.ts'
   ],
   dayjs: {
     locales: ['zh-tw'],

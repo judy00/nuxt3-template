@@ -15,6 +15,10 @@
     </div>
     <hr>
 
+    <h3>Nuxt Icon</h3>
+    <SatIcon class="check-icon" name="check" />
+    <hr>
+
     <h3>Day.js</h3>
     <div>{{ $dayjs('2024-02-11').utc().toString() }}</div>
     <div>currentYear: {{ currentYear }}</div>
@@ -167,5 +171,10 @@ async function showConfirmMsg() {
   @include mobile {
     color: orange;
   }
+}
+
+.check-icon {
+  color: pink;
+  font-size: 5rem;
 }
 </style>
